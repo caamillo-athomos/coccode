@@ -3,7 +3,9 @@
   "module": "src/index.jsx",
   "type": "module",
   "scripts": {
-    "dev": "bun --watch src/index.jsx"
+    "dev": "concurrently \"bun run --hot src/index.jsx\" \"bun run tw:dev\"",
+    "tw": "bunx tailwindcss -i ./src/style.css -o ./tailwind/output.css",
+    "tw:dev": "bunx tailwindcss -i ./src/style.css -o ./tailwind/output.css --watch"
   },
   "devDependencies": {
     "bun-types": "latest",
@@ -11,6 +13,8 @@
   },
   "dependencies": {
     "@elysiajs/html": "^0.6.5",
-    "elysia": "^0.6.23"
+    "concurrently": "^8.2.1",
+    "elysia": "^0.6.23",
+    "tailwindcss": "^3.3.3"
   }
 }

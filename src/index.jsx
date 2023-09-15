@@ -12,7 +12,7 @@ const App = new Elysia()
         html(
             <BaseHtml>
                 <body>
-                    <h1>Hello World</h1>
+                    <h1 class=" text-xl">Hello World</h1>
                     <button hx-post="/test" hx-swap="outerHTML">
                         Click me
                     </button>
@@ -20,6 +20,7 @@ const App = new Elysia()
             </BaseHtml>
         ))
     .post('/test', () => <div>Hello, HTMX!</div>)
+    .get('/style.css', () => Bun.file('./tailwind/output.css'))
     .listen(3000)
 
 console.log(`Server is running at http://${ App.server.hostname }:${ App.server.port }`)
