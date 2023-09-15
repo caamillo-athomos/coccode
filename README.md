@@ -1,4 +1,6 @@
-# coccode
+# Coccodè
+
+A Coccodè App using [BETH](https://github.com/fvucemilo/beth-stack) development stack
 
 To install dependencies:
 
